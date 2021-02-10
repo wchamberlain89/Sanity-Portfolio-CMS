@@ -1,32 +1,39 @@
 import { Link } from "gatsby"
+import { Image } from 'gatsby-image'
 import PropTypes from "prop-types"
 import React from "react"
 
+const mainNavigationLinks = [
+  {
+    title: 'blog',
+    path: '/blog'
+  },
+  {
+    title: 'portfolio',
+    path: '/portfolio'
+  },
+  {
+    title: 'about',
+    path: '/about'
+  },
+  {
+    title: 'contact',
+    path: '/contact'
+  }
+]
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+  <header>
+    <div>
+      <div>
+        <h1>Ward Chamberlain</h1>
+        
+        <div className='header-links'>
+          {mainNavigationLinks.map((link) => (
+            <Link to={link.path}>{link.title}</Link>
+          ))}
+        </div>
+      </div>
     </div>
   </header>
 )

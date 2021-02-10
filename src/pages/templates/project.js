@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import PortableText from '../components/PortableText'
+import PortableText from '../../components/PortableText'
 
 export const projectQuery = graphql`
     query($slug: String) {

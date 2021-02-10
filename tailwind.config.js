@@ -1,3 +1,18 @@
+const typography = require("@manishrc/tailwindcss-typography-js");
+
+const typographyTheme = typography({
+  baseFontSize: "18px",
+  baseLineHeight: 1.666,
+  headerFontFamily: ["Rajdhani", "Helvetica Neue", "sans-serif"],
+  bodyFontFamily: ["Georgia", "serif"],
+  scaleRatio: 2.75,
+  googleFonts: [
+    {
+      name: 'Rajdhani'
+    }
+  ]
+});
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -12,7 +27,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['last']
+    },
   },
-  plugins: [],
+  plugins: [typographyTheme],
 }

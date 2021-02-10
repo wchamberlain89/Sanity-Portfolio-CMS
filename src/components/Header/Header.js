@@ -24,13 +24,15 @@ const mainNavigationLinks = [
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
-      <div>
-        <h1>Ward Chamberlain</h1>
-        
-        <div className='header-links'>
+    <div className='pt-16 mb-6'>
+      <div className='flex justify-between items-center px-8 py-4 bg-gray-900 text-gray-100'>
+        <h1 className='mb-0'>Ward Chamberlain</h1>
+        <div className='relative'>
+          <div className='h-32 w-32 border-yellow-200 border-4 rounded-full bg-white absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
+        </div>
+        <div className='flex items-center header-links'>
           {mainNavigationLinks.map((link) => (
-            <Link to={link.path}>{link.title}</Link>
+            <Link className='uppercase text-lg pr-5 last:pr-0' to={link.path}>{link.title}</Link>
           ))}
         </div>
       </div>

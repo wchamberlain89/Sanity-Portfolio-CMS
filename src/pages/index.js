@@ -1,50 +1,39 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO/"
+import TextBlock from "../components/TextBlock"
+import Card from '../components/Card'
 
-export const query = graphql`
-  query ProjectQuery { 
-    allSanityProject {
+export const query = graphql` 
+  query MyQuery {
+    allSanityPost {
       edges {
         node {
+          _rawBody
           title
-          slug {
-            current
-          }
-          mainImage{
+          publishedAt
+          mainImage {
             asset {
               fluid {
                 ...GatsbySanityImageFluid
               }
             }
           }
-          body {
-            children {
-              text
-              marks
-            }
-            style
-          }
         }
       }
     }
-  }
+  }    
 `
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>My Portfolio</h1>
+    <TextBlock body={'Hey there, I write about my adventures through the digital world!'}/>
     <ul className='flex flex-wrap'>
-      {data.allSanityProject.edges.map(({ node: project }) => (
-        <Link className='max-w-45 flex-grow m-5' key={project.slug.current} to={`/${project.slug.current}`}>
-          <li>
-            <h2>{project.title}</h2>
-            <Image fluid={project.mainImage.asset.fluid} alt={project.title}/>
-          </li>
-        </Link>
+      {data.allSanityPost.edges.map(({ node }) => (
+        <Card
+          image={node.mainImage} title={node.title} />
       ))}
     </ul>
   </Layout>

@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO/"
 
 export const query = graphql`
   query ProjectQuery { 
@@ -47,8 +47,6 @@ const IndexPage = ({ data }) => (
         </Link>
       ))}
     </ul>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 

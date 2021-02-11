@@ -116,18 +116,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Rajdhani`,
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`]
-          },
+          `open sans`,
+          `fira code`,
+          `rajdhani` // you can also specify font weights and styles
         ],
-      },
+        display: 'swap'
+      }
     }
   ],
 }

@@ -9,13 +9,19 @@ module.exports = {
         'primary': theme('colors.gray.900'),
         'secondary': '#ffed4a',
         'accent': '#e3342f',
+        'sitePrimmary': '#FEE400'
       }),
       backgroundColor: theme => ({
       ...theme('colors'),
-      'primary': '#3490dc',
+      'primary': '#FEE400',
       'secondary': '#FFEF66',
       'accent': theme('colors.gray.900'),
       }),
+      fontFamily: {
+        'display': ['Rajdhani'],
+        'body': ['Open Sans'],
+        'accent': ['Fira Code']
+       },
       maxWidth: {
         '1/4': '25%',
         '1/2': '50%',

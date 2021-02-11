@@ -29,7 +29,7 @@ const Header = ({ siteTitle }) => (
       <div className='bg-gray-900 text-gray-100'>
         <PageContainer>
           <div className='flex justify-between items-center py-4'>
-            <h1 className='mb-0'>Ward Chamberlain</h1>
+            <h1 className='mb-0 font-accent'>Ward Chamberlain</h1>
             <div className='relative'>
               <div className='h-32 w-32 border-yellow-200 border-4 rounded-full bg-white absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
             </div>

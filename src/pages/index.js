@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => (
     <ul className='flex flex-wrap'>
       {data.allSanityPost.edges.map(({ node }) => (
         <Card
-          image={node.mainImage} title={node.title} />
+          image={node.mainImage} title={node.title} subtitle={node.publishedAt}/>
       ))}
     </ul>
   </Layout>

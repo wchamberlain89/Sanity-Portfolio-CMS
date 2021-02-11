@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO/"
 import TextBlock from "../components/TextBlock"
 import Card from '../components/Card'
+import BlogPreviewCard from "../components/BlogPreviewCard"
 
 export const query = graphql` 
   query MyQuery {
@@ -20,6 +21,7 @@ export const query = graphql`
               }
             }
           }
+          shortDescription
         }
       }
     }
@@ -32,8 +34,13 @@ const IndexPage = ({ data }) => (
     <TextBlock body={'Hey there, I write about my adventures through the digital world!'}/>
     <ul className='flex flex-wrap'>
       {data.allSanityPost.edges.map(({ node }) => (
-        <Card
-          image={node.mainImage} title={node.title} subtitle={node.publishedAt}/>
+        <Card>
+          <BlogPreviewCard 
+            image={node.mainImage.asset.fluid.src} 
+            title={node.title} 
+            subtitle={node.publishedAt} 
+            body={node.shortDescription} />
+        </Card>
       ))}
     </ul>
   </Layout>

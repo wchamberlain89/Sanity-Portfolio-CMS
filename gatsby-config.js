@@ -101,6 +101,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-page-load-delay`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     {
@@ -125,6 +126,9 @@ module.exports = {
         ],
         display: 'swap'
       }
+    },
+    {
+      resolve: "gatsby-plugin-transition-link",
     }
   ],
 }

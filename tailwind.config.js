@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        border: '-5px 5px black, -4px 4px black, -3px 3px black, -2px 2px black, -1px 1px black'
+      },
       borderColor: theme => ({
         ...theme('colors'),
          DEFAULT: theme('colors.gray.300', 'currentColor'),
@@ -21,7 +24,16 @@ module.exports = {
         'display': ['Rajdhani'],
         'body': ['Open Sans'],
         'accent': ['Fira Code']
-       },
+      },
+      animation: {
+        bounceBoxShadow: 'bounceBoxShadow 1s ease-out'
+      },
+      keyframes: {
+        bounceBoxShadow: {
+          '0%, 100%': { boxShadow: { border: 0 } },
+          '50%': { height: 50 }
+        }
+      },
       maxWidth: {
         '1/4': '25%',
         '1/2': '50%',
@@ -33,7 +45,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      padding: ['last']
+      padding: ['last'],
+      animation: ['hover', 'focus'],
+      transitionTimingFunction: ['hover']
     },
   },
   plugins: [],

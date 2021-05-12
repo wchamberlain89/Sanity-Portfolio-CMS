@@ -54,14 +54,14 @@ export default {
         ],
       },
     },
-    {
-      title: 'Code Block',
-      name: 'codeBlock',
-      type: 'code',
-      options: {
-        theme: 'monokai'
-      }
-    }, 
+    // {
+    //   title: 'Code Block',
+    //   name: 'codeBlock',
+    //   type: 'code',
+    //   options: {
+    //     theme: 'monokai'
+    //   }
+    // }, 
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.

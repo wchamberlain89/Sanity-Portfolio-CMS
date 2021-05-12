@@ -1,0 +1,24 @@
+// in sanity-structure.js
+
+import S from "@sanity/desk-tool/structure-builder";
+
+const hiddenDocTypes = listItem => ![
+    "about"
+  ].includes(listItem.getId())
+
+export default () =>
+  S.list()
+    .title("Content")
+    .items([
+        S.listItem()
+            .title("About Me")
+            .child(
+                S.editor()
+                    .id('about')
+                    .schemaType("about")
+                    .documentId("about")
+            ),
+        ...S.documentTypeListItems()
+            .filter(hiddenDocTypes)
+    ]);
+    
